@@ -9,3 +9,17 @@ the `cmp eax, ebx`will lead to the different address.if they are equal, the code
 ![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/03.PNG)<br>
 Thus, it can be comfirm that if ZF==1, the program will always jump to `great work` massaage box, only change that two different registers to two indentical registers will make ZF always 1.<br>
 The crackme_Y.exe is the program that change cmp eax,ebx to cmp eax,eax.<br>
+
+##Q2:
+To further understand this code, we can look at the function that generate eax and ebx. From Picture above, it can be found that eax is generate from CRACKME.0040137E, and ebx is generate from CRACKME.004013D8. Then we look inside those two blocks.<br>
+For 0040137E,<br>
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/04.PNG)<br>
+There is a call 004013d2, and ENTER it, it shows `sub AL, 20`, which means transfer the lower case of name to upper case. Here we can add a breadpoint to verify that at stack window. Then call 004013c2, which accumulate all ascii code of name. The most important line is call xor 5678,so the edi =edi xor 5678, then store in eax.
+
+For 004013D8:
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/05.PNG)<br>
+in this code, the password will xor 1234 and store in ebx. So, the logic is if the accumulation of the ascii code of upper case of name xor 5678== password xor 1234, the program will pass. So the password can be computed as password=accumulation of the ascii code of upper case of name xor 5678 Xor 1234.
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/06.PNG)<br>
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/07.PNG)<br>
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/08.PNG)<br>
+![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/09.PNG)<br>
