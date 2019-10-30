@@ -1,6 +1,6 @@
 # computer_security_HW3-part1-
 
-##Q1:
+## Q1:
 The assembly come contain GetmassageA and MessageBox API, it can be easyly find that two strings(No luck there, mate! Great work mate are related to MessageBoxA.<br>
 ![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/01.PNG)<br>
 from $6A 00 and $6A 30, those two lines are called from 0040124C and 00401245.<br>
@@ -10,7 +10,7 @@ the `cmp eax, ebx`will lead to the different address.if they are equal, the code
 Thus, it can be comfirm that if ZF==1, the program will always jump to `great work` massaage box, only change that two different registers to two indentical registers will make ZF always 1.<br>
 The crackme_Y.exe is the program that change cmp eax,ebx to cmp eax,eax.<br>
 
-##Q2:
+## Q2:
 To further understand this code, we can look at the function that generate eax and ebx. From Picture above, it can be found that eax is generate from CRACKME.0040137E, and ebx is generate from CRACKME.004013D8. Then we look inside those two blocks.<br>
 For 0040137E,<br>
 ![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/04.PNG)<br>
