@@ -19,7 +19,10 @@ There is a call 004013d2, and ENTER it, it shows `sub AL, 20`, which means trans
 For 004013D8:
 ![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/05.PNG)<br>
 in this code, the password will xor 1234 and store in ebx. So, the logic is if the accumulation of the ascii code of upper case of name xor 5678== password xor 1234, the program will pass. So the password can be computed as password=accumulation of the ascii code of upper case of name xor 5678 Xor 1234.
-![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/06.PNG)<br>
-![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/07.PNG)<br>
-![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/08.PNG)<br>
-![](https://github.com/lovethatcat/computer_security_HW3-part1-/raw/master/Images/09.PNG)<br>
+
+<br>
+My first name is Chen, the code is 17746
+the given three name is :<br>
+shifu:17745<br>
+yujie:17866<br>
+yiming:17793
