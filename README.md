@@ -23,6 +23,6 @@ in this code, the password will xor 1234 and store in ebx. So, the logic is if t
 <br>
 My first name is Chen, the code is 17746
 the given three name is :<br>
-shifu:17745<br>
+shifu:17715<br>
 yujie:17866<br>
 yiming:17793
